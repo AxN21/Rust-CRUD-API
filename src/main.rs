@@ -181,7 +181,7 @@ fn set_database() -> Result<(), PostgresError> {
 
     //Create table
     client.batch_execute("
-                CREATE TABLE IS NOT EXISTS users (
+                CREATE TABLE IF NOT EXISTS users (
                     id SERIAL PRIMARY KEY,
                     name VARCHAR NOT NULL,
                     email VARCHAR NOT NULL
